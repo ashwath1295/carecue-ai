@@ -1,0 +1,3 @@
+nicegui
+google-generativeai
+python-dotenv

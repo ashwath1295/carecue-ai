@@ -27,6 +27,28 @@ python main.py
 
 Open the local URL shown in the terminal, usually `http://127.0.0.1:8080`.
 
+## Deploy on Render
+
+1. Push this repo to GitHub.
+2. Go to https://render.com and sign in with GitHub.
+3. Click **New +** and choose **Blueprint**.
+4. Select this repository.
+5. Render will read `render.yaml`.
+6. Add the secret environment variable when prompted:
+
+```bash
+GOOGLE_API_KEY=your_google_gemini_api_key_here
+```
+
+Render will automatically run:
+
+```bash
+pip install -r requirements.txt
+python main.py
+```
+
+The app binds to Render's `PORT` automatically.
+
 ## Gemini API Key
 
 1. Go to Google AI Studio: https://aistudio.google.com/

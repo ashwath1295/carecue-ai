@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import os
 from datetime import datetime, date
 from typing import Any
 
@@ -537,4 +538,9 @@ def render_shell() -> None:
 setup()
 render_shell()
 
-ui.run(title="CareCue AI", reload=False)
+ui.run(
+    title="CareCue AI",
+    host="0.0.0.0",
+    port=int(os.getenv("PORT", "8080")),
+    reload=False,
+)
